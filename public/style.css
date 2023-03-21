@@ -1,0 +1,877 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Commissioner;
+}
+
+body{
+    background-color: hsl(0, 0%, 98%);
+    position: relative;
+}
+
+@media (min-width:781px){
+    header .container{
+        width: 750px;
+    }
+    .burger-icon{
+        display: none;
+    }
+}
+
+@media (min-width:991px){
+    header .container{
+        width: 950px;
+    }
+}
+
+@media (min-width:1191px){
+    header .container{
+        width: 1150px;
+    }
+}
+
+@media (min-width:1500px){
+    header .container{
+        width: 1400px;
+    }
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    padding: 17px 35px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    z-index: 10;
+}
+
+.overlay.active{
+    display: block;
+}
+
+.mastercraft, .infos, .about, .back-project{
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    padding: 60px 40px;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .1);
+}
+
+
+.holder{
+    width: 800px;
+    margin: 0 auto;
+    position: relative;
+    top: -110px;
+}
+
+header .container{
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+header{
+    background-image: url(images/image-hero-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+}
+
+header .container .head{
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+header .container .head .burger-icon{
+    cursor: pointer;
+    position: relative;
+    z-index: 20;
+}
+
+header .container .head .menu{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header .container .head .menu li a{
+    text-transform: capitalize;
+    color: white;
+    font-weight: 400;
+    list-style: none;
+}
+
+header .container .head .menu li a:hover{
+    text-decoration: underline;
+}
+
+.mastercraft{
+    text-align: center;
+}
+
+.mastercraft .logo{
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mastercraft > h2{
+    text-transform: capitalize;
+    font-size: 32px;
+}
+
+.mastercraft > p{
+    letter-spacing: 1px;
+    color: hsl(0, 0%, 48%);
+    margin: 15px auto 35px;
+}
+
+.mastercraft .btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.mastercraft .btns .back{
+    background-color: hsl(176, 50%, 47%);
+    font-size: 18px;
+}
+
+.mastercraft .btns .back:hover{
+    background-color: hsl(176, 72%, 28%);
+}
+
+.mastercraft .btns .bookmark{
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: hsl(0, 0%, 48%);
+    padding: 20px 50px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.mastercraft .btns .bookmark.bookmarked{
+    color: hsl(176, 72%, 28%);
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.mastercraft .btns .bookmark > span{
+    margin-left: 20px;
+    position: relative;
+    left: 10px;
+}
+
+.mastercraft .btns .bookmark > i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    border-radius: 50%;
+    background-color: black;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s;
+}
+
+.mastercraft .btns .bookmark > i.bookmarked{
+    width: 28%;
+    background-color: hsl(176, 72%, 28%);
+    color: white;
+}
+
+.mastercraft .btns .bookmark:hover > i{
+    background-color: rgba(0, 0, 0, .75);
+}
+
+@media (max-width:991px){
+    .holder{
+        width: calc(100% - 40px);
+    }
+}
+
+@media (max-width:781px){
+    .mastercraft, .infos, .about {
+        padding: 40px 20px;
+    }
+    header .container .head .menu{
+        align-items: start;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        position: absolute;
+        top: 90px;
+        width: 100%;
+        background-color: white;
+        border-radius: 8px;
+        transition: all .3s;
+        z-index: -1;
+        opacity: 0;
+    }
+    header .container .head .menu.active{
+        z-index: 20;
+        opacity: 1;
+    }
+    header .container .head .menu li{
+        width: 100%;
+        padding: 25px;
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+    header .container .head .menu li a{
+        padding-left: 15px;
+        display: block;
+        width: 100%;
+        color: hsl(0, 0%, 48%);
+        font-weight: 400;
+        transition: all .1s;
+    }
+    header .container .head .menu li a:hover{
+        font-weight: 600;
+    }
+    .mastercraft > h2 {
+        font-size: 25px;
+    }
+    .mastercraft > p {
+        letter-spacing: 0px;
+    }
+    .mastercraft .btns .bookmark > span {
+        display: none;
+    }
+    .mastercraft .btns .bookmark {
+        background-color: transparent;
+        width: 60px;
+        height: 60px;
+        padding: 0;
+    }
+    .mastercraft .btns .bookmark > i {
+        width: 100%;
+    }
+    .mastercraft .btns .back {
+        padding: 20px 35px;
+        width: calc(100% - 25%);
+    }
+    .mastercraft .btns .bookmark > i.bookmarked {
+        width: 100%;
+    }
+}
+
+@media (max-width:400px){
+    .mastercraft .btns .back{
+        padding: 20px 5px;
+    }
+}
+
+.infos{
+    margin: 40px auto;
+    padding: 50px 40px;
+}
+
+.infos > div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.infos div .strong{
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.infos div .weak{
+    font-weight: 500;
+    color: hsl(0, 0%, 48%);
+    position: relative;
+    top: 8px;
+}
+
+.infos > div > div{
+    width: calc(100% / 3);
+}
+
+.infos > div > div:nth-child(2){
+    border-right: 1px solid rgba(0, 0, 0, .2);
+    border-left: 1px solid rgba(0, 0, 0, .2);
+    padding: 0 50px;
+}
+
+.infos > div > div:last-child{
+    padding-left: 50px;
+}
+
+.infos .progress{
+    width: 100%;
+    height: 15px;
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 30px;
+    margin: 0;
+    position: relative;
+}
+
+.infos .progress::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: hsl(176, 50%, 47%);
+}
+
+@media (max-width:781px){
+    .infos > div{
+        text-align: center;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    .infos > div > div:first-child{
+        padding-top: 0 !important;
+    }
+    .infos > div > div {
+        width: fit-content;
+        height: calc(100% / 3);
+        padding: 30px 0px !important;
+    }
+    .infos > div > div:nth-child(2) {
+        border-right: none;
+        border-left: none;
+        border-top: 1px solid rgba(0, 0, 0, .2);
+        border-bottom: 1px solid rgba(0, 0, 0, .2);
+    }
+    .infos div .weak {
+        margin-top: 8px;
+        position: unset;
+    }
+}
+
+
+.about .title{
+    font-weight: 700;
+    font-size: 27px;
+    margin-bottom: 30px;
+}
+
+.about .text{
+    font-weight: 400;
+    color: hsl(0, 0%, 48%);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.about .card{
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    margin-top: 20px;
+    padding: 30px 40px;
+}
+
+.about .card > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about .card .title{
+    font-size: 22px;
+    font-weight: 800;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.about .card .pledge{
+    color: hsl(176, 50%, 47%);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.about .card .text{
+    margin: 30px 0;
+}
+
+.about .card .left{
+    display: flex;
+    align-items: center;
+    color: hsl(0, 0%, 48%);
+    font-weight: 500;
+}
+
+.about .card .strong{
+    color: black;
+    font-size: 40px;
+    font-weight: 800;
+    margin-right: 3px;
+}
+
+.about .card .select-reward{
+    background-color: hsl(176, 50%, 47%);
+    text-transform: capitalize;
+}
+
+.about .card .select-reward:hover{
+    background-color: hsl(176, 72%, 28%);
+}
+
+.about .out-of-stock{
+    opacity: .5;
+}
+
+.about .card .out-of-stock{
+    padding: 17px 40px;
+    background-color: hsl(0, 0%, 48%);
+    pointer-events: none;
+}
+
+@media (max-width:781px){
+    .about .card > div{
+        align-items: start;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .about .card > div:last-child{
+        gap: 20px;
+    }
+    .about .card {
+        padding: 25px;
+    }
+    .about .card .title {
+        font-size: 16px;
+        font-weight: 700;
+    }
+    .about .card .pledge {
+        font-size: 16px;
+    }
+    .about .text {
+        font-size: 16px;
+    }
+    .about .card .select-reward {
+        padding: 15px 35px;
+    }
+}
+
+.back-project{
+    width: 800px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 60px 40px;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, .1);
+    position: absolute;
+    top: 0;
+    margin-top: 90vh;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    z-index: -1;
+    transition: all .3s;
+}
+
+@media (max-width:500px){
+    .back-project{
+        margin-top: 120vh !important;
+    }
+}
+
+@media (max-width:414px){
+    .back-project{
+        margin-top: 150vh !important;
+    }
+}
+
+@media (max-width:340px){
+    .back-project{
+        margin-top: 200vh !important;
+    }
+}
+
+.back-project.active{
+    z-index: 100;
+    opacity: 1;
+}
+
+@media (max-width:781px){
+    .back-project.active{
+        margin-top: 140vh !important;
+    }
+}
+
+.back-project .close{
+    color: hsl(0, 0%, 48%);
+    position: absolute;
+    top: 20px;
+    right: 20px; 
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.back-project .title{
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    margin-bottom: 25px;
+}
+
+.back-project .text{
+    font-weight: 400;
+    color: hsl(0, 0%, 48%);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+.back-project .card{
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    margin-top: 20px;
+    position: relative;
+}
+
+.back-project .card.active{
+    border: 3px solid hsl(176, 50%, 47%);
+}
+
+.back-project .card:last-child{
+    pointer-events: none;
+    opacity: .5;
+}
+
+.back-project .card .container{
+    padding: 30px 40px;
+    border-radius: 8px;
+    position: relative;
+    z-index: 10;
+    background-color: white;
+}
+
+.back-project .card .container .title{
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.back-project .card .container .title:hover{
+    color: hsl(176, 50%, 47%);
+}
+
+.back-project .card .container .text{
+    padding-left: 50px;
+}
+
+.back-project .card .container .radio{
+    padding: 10px 0;
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+.back-project .card .container .radio .radio-btn{
+    appearance: none;
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+    background-clip: content-box;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.back-project .card .container .radio .radio-btn:checked{
+    background-color: hsl(176, 50%, 47%);
+}
+
+.back-project .card .container > .radio > div .pledge{
+    color: hsl(176, 50%, 47%);
+    font-weight: 600;
+    font-size: 18px;
+    
+}
+
+.back-project .card .container > .radio > div .left{
+    color: hsl(0, 0%, 48%);
+    font-weight: 500;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 0;
+    margin: 0;
+    margin-top: -5px;
+}
+
+.back-project .card .container > .radio > div .strong{
+    color: black;
+    font-size: 25px;
+    font-weight: 700;
+    margin-right: 3px;
+}
+
+.back-project .card .pledge-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    border-top: 1px solid rgba(0, 0, 0, .2);
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    top: -30px;
+    z-index: -1;
+    transition: all .3s;
+}
+
+.back-project .card .pledge-container.active{
+    position: relative;
+    opacity: 1;
+    top: 0;
+    z-index: 12;
+}
+
+.back-project .card .pledge-container > p{
+    font-size: 18px;
+    color: hsl(0, 0%, 48%);
+}
+
+.back-project .card .pledge-container .pledge-input{
+    border-radius: 30px;
+    font-weight: 800;
+    outline: none;
+    font-size: 16px;
+    border: 1px solid hsl(176, 50%, 47%);
+    width: 110px;
+    padding: 15px 20px 15px 40px;
+    color: black;
+}
+
+.back-project .card .pledge-container .inputs > div{
+    position: relative;
+}
+
+.back-project .card .pledge-container .inputs > div > i{
+    position: absolute;
+    color: hsl(0, 0%, 48%);
+    left: 25px;
+    top: 55%;
+    transform: translateY(-50%);
+}
+
+.back-project .card .pledge-container .continue{
+    padding: 18px 25px;
+    letter-spacing: 1px;
+    font-size: 14px;
+    background-color: hsl(176, 50%, 47%);
+}
+
+.back-project .card .pledge-container .continue:hover{
+    background-color: hsl(176, 72%, 28%);
+}
+
+.back-project .card .pledge-container .inputs > :is(.over25.invalid, .over75.invalid){
+    opacity: .5;
+    pointer-events: none;
+}
+
+
+.back-project .card .container .left{
+    color: hsl(0, 0%, 48%);
+    font-weight: 500;
+    font-size: 18px;
+    margin: 10px 0 0;
+}
+
+.back-project .card .container .strong{
+    color: black;
+    font-size: 22px;
+    font-weight: 800;
+    margin-right: 3px;
+}
+
+.back-project .card .pledge-container .inputs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media (max-width:991px){
+    .back-project{
+        width: calc(100% - 40px);
+    }
+    .back-project .card .container .radio {
+        padding-right: 10px;
+    }
+}
+
+@media (max-width:781px){
+    .back-project{
+        padding: 40px 30px;
+    }
+    .back-project .card .container {
+        padding: 30px;
+    }
+    .back-project .card .container .radio {
+        padding-right: 10px;
+        flex-wrap: wrap;
+    }
+    .back-project .card .container .title {
+        width: 60%;
+        font-size: 15px;
+        min-width: fit-content;
+        margin-top: 4px;
+    }
+    .back-project .card .container > .radio > div .pledge {
+        padding-left: 50px;
+        margin-top: -25px;
+        font-size: 16px;
+    }
+    .back-project .card .container > .radio > div .left{
+        display: none;
+    }
+    .back-project .card .pledge-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px 0;
+    }
+    .back-project .card .container .text{
+        padding-left: 0;
+        font-size: 16px;
+    }
+}
+
+@media (max-width:420px){
+    .back-project .card .container > .radio > div .pledge {
+        padding-left: 0;
+        margin-top: -20px;
+    }
+}
+
+@media (min-width:781px){
+    .back-project .card .container > .left{
+        display: none;
+    }
+}
+
+.thanks-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    z-index: -1;
+    opacity: 0;
+    transition: all .2s;
+}
+
+.thanks-container.active{
+    z-index: 10;
+    opacity: 1;
+}
+
+.thanks-container .title{
+    margin: 30px auto 20px;
+    font-size: 25px;
+}
+
+.thanks-container .text{
+    font-weight: 400;
+    color: hsl(0, 0%, 48%);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.thanks-container .btn{
+    background-color: hsl(176, 50%, 47%);
+}
+
+.thanks-container .btn:hover{
+    background-color: hsl(176, 72%, 28%);
+}
+
+@media (max-width:781px){
+    .thanks-container{
+        width: calc(100% - 40px);
+        padding: 40px 20px;
+    }
+    .thanks-container .title {
+        font-size: 20px;
+    }
+    .thanks-container .text {
+        font-size: 14px;
+    }
+}
+
+@media (max-width:375px){
+    .mastercraft > h2 {
+        font-size: 22px;
+    }
+    .infos div .strong {
+        font-size: 40px;
+    }
+    .about .title {
+        font-size: 24px;
+    }
+    .about .text {
+        font-size: 15px;
+    }
+    .about .card .select-reward {
+        padding: 17px 28px;
+        font-weight: 600;
+    }
+    .back-project .card .container {
+        padding: 30px 20px;
+    }
+    .back-project .text, .back-project .card .container .text {
+        font-size: 15px;
+    }
+    .back-project .card .container .radio .radio-btn {
+        width: 25px;
+        height: 25px;
+    }
+    .back-project .card .container .title {
+        font-size: 14px;
+    }
+    .back-project .card .container > .radio > div .pledge {
+        padding-left: 45px;
+        font-size: 15px;
+    }
+    .back-project .card .container :is(.over25, .over75) {
+        width: 25px;
+        height: 25px;
+        position: relative;
+        top: 10px;
+    }
+}
