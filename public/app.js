@@ -86,7 +86,6 @@ cards.forEach(card => {
 
     btnSelectReward.forEach(btn => {
         btnSelectReward[0].addEventListener('click', () => {
-            matchQuery();
             overlay.classList.add('active');
             backProjectContainer.classList.add('active');
             backProjectContainer.style.marginTop = '180vh';
@@ -95,7 +94,6 @@ cards.forEach(card => {
             cards[1].childNodes[3].classList.add('active');
         });
         btnSelectReward[1].addEventListener('click', () => {
-            matchQuery();
             overlay.classList.add('active');
             backProjectContainer.classList.add('active');
             backProjectContainer.style.marginTop = '180vh';
